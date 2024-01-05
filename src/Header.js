@@ -15,9 +15,9 @@ function Header() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
             <Link to={'/'}><h5 className='tab'>Home</h5></Link>
-            <Link to={'/dashboard'} className='tab'><h5>Dashboard</h5></Link>
-            <Link to={'/charts'} className='tab'><h5>Charts</h5></Link>
+            <Link to={'/dashboard'} className='tab'><h5>Track Money</h5></Link>
             <Link to={'/categories'} className='tab'><h5>Categories</h5></Link>
+            <Link to={'/charts'} className='tab'><h5>Charts</h5></Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

@@ -142,9 +142,6 @@ function Addexpense({ setupdatefinances }) {
               }
             </div>
 
-
-
-
           </Form>
 
         </Modal.Body>

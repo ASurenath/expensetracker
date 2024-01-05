@@ -3,6 +3,8 @@ import { addCategApi, deleteCategApi, getCategsApi } from '../apiservice/allApi'
 import { FloatingLabel, Form, InputGroup, Modal } from 'react-bootstrap';
 import { icons } from '../icons';
 import { toast } from 'react-toastify';
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import Tooltip from 'react-bootstrap/Tooltip';
 
 
 
@@ -22,7 +24,7 @@ function Categories() {
     const getcategories = async () => {
         const result = await getCategsApi()
         if (result.status >= 200 && result.status < 300) {
-            
+
             setcategs(result.data)
         }
         else {
@@ -132,6 +134,12 @@ function Categories() {
         }
         setcategid('')
     }
+    
+        const renderTooltip = (props) => (
+            <Tooltip id="button-tooltip" {...props}>
+                Drag and drop here to delete!
+            </Tooltip>
+        );
     return (
         <>
             <div className='page'>
@@ -159,7 +167,13 @@ function Categories() {
                         ) : <div onClick={getcategories}>Loading...</div>
                         }
                     </div>
-                    <button type="button" className='btn-exp fw-bold fs-1 py-1 my-3 mx-5' onDragOver={e => draggingover(e)} onDrop={e => dropping(e)}><i className='fa-solid fa-trash' /></button>
+                    <OverlayTrigger
+                        placement="bottom"
+                        delay={{ show: 250, hide: 400 }}
+                        overlay={renderTooltip}
+                    >
+                        <button type="button" className='btn-exp fw-bold fs-1 py-1 my-3 mx-5' onDragOver={e => draggingover(e)} onDrop={e => dropping(e)}><i className='fa-solid fa-trash' /></button>
+                    </OverlayTrigger>
                     <button type="button" className='btn-inc fw-bold fs-1 py-1 my-3 mx-5' onClick={handleShow1}><i className='fa-solid fa-plus' /></button>
                 </div>
 

@@ -17,4 +17,6 @@ export const icons=[
                     "fa-gift",
                     "fa-cake-candles",
                     "fa-scale-unbalanced",
-                    "fa-piggy-bank"]
+                    "fa-piggy-bank",
+                    "fa-pills"
+                ]

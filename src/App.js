@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes, redirect } from 'react-router-dom';
 import './App.css';
 import Footer from './Footer';
 import Header from './Header';
@@ -20,6 +20,7 @@ function App() {
         <Route path={'/dashboard'} element={<Dashboard />} />
         <Route path={'/charts'} element={<Charts />} />
         <Route path={'/categories'} element={<Categories />} />
+        <Route path={'/*'} element={<Navigate to={'/'}/>}/>
       </Routes>
 
       <Footer></Footer>
